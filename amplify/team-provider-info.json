@@ -15,7 +15,7 @@
       "function": {
         "inboundHandler": {
           "deploymentBucketName": "amplify-pipelinedashboard-dev-31352-deployment",
-          "s3Key": "amplify-builds/inboundHandler-343438716b3978754947-build.zip"
+          "s3Key": "amplify-builds/inboundHandler-6d612b554f703135436d-build.zip"
         },
         "pingResponder": {
           "deploymentBucketName": "amplify-pipelinedashboard-dev-31352-deployment",
