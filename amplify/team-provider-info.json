@@ -10,6 +10,21 @@
       "StackName": "amplify-pipelinedashboard-dev-31352",
       "StackId": "arn:aws:cloudformation:us-east-1:735140960268:stack/amplify-pipelinedashboard-dev-31352/c0b3ff50-c928-11ed-9d32-12f9749df0a1",
       "AmplifyAppId": "d3h9hzn7pwu5sf"
+    },
+    "categories": {
+      "function": {
+        "inboundHandler": {
+          "deploymentBucketName": "amplify-pipelinedashboard-dev-31352-deployment",
+          "s3Key": "amplify-builds/inboundHandler-343438716b3978754947-build.zip"
+        },
+        "pingResponder": {
+          "deploymentBucketName": "amplify-pipelinedashboard-dev-31352-deployment",
+          "s3Key": "amplify-builds/pingResponder-4b517846737a655a3175-build.zip"
+        }
+      },
+      "api": {
+        "inboundHandlers": {}
+      }
     }
   }
 }

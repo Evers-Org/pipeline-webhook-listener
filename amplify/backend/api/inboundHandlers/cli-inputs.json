@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/inbound/{provider}/{repo}": {
+      "name": "/inbound/{provider}/{repo}",
+      "lambdaFunction": "inboundHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/inbound/{provider}/{repo}/ping": {
+      "name": "/inbound/{provider}/{repo}/ping",
+      "lambdaFunction": "pingResponder",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
