@@ -1,0 +1,16 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.4.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
