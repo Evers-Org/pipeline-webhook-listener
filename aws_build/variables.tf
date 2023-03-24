@@ -10,3 +10,8 @@ variable "AWS_ACCESS_KEY" {
 variable "AWS_SECRET_KEY" {
   type = string
 }
+
+variable "STAGE_NAME" {
+  type    = string
+  default = "dev"
+}

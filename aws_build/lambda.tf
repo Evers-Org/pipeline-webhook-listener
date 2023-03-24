@@ -12,8 +12,9 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name               = "pipeline-dashboard-api"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+  name                = "pipeline-dashboard-api"
+  assume_role_policy  = data.aws_iam_policy_document.assume_role.json
+  managed_policy_arns = ["arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"]
 }
 
 data "archive_file" "lambda" {
@@ -33,4 +34,12 @@ resource "aws_lambda_function" "api_handler" {
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
   runtime = "nodejs18.x"
+}
+
+resource "aws_lambda_permission" "allow_apigateway" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.api_handler.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.example.execution_arn}/*"
 }

@@ -147,3 +147,4 @@ terraform.rc
 
 
 lambda_function_payload.zip
+**/test/*.json

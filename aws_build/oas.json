@@ -4,17 +4,9 @@
     "title": "inboundHandlers"
   },
   "paths": {
-    "/inbound/{provider}/{repo}": {
+    "/inbound/{provider}": {
       "options": {
         "parameters": [
-          {
-            "name": "repo",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "provider",
             "in": "path",
@@ -68,14 +60,6 @@
       "x-amazon-apigateway-any-method": {
         "parameters": [
           {
-            "name": "repo",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "provider",
             "in": "path",
             "required": true,
@@ -108,7 +92,7 @@
         },
         "x-amazon-apigateway-integration": {
           "httpMethod": "POST",
-          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:735140960268:function:inboundHandler-dev/invocations",
+          "uri": "arn:aws:apigateway:AWS_REGION:lambda:path/2015-03-31/functions/LAMBDA_ARN/invocations",
           "responses": {
             "default": {
               "statusCode": "200"
