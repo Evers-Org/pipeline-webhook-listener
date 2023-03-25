@@ -11,10 +11,27 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
+data "aws_iam_policy_document" "iot_publish" {
+  statement {
+    effect = "Allow"
+
+    actions = ["iot:Publish"]
+
+    resources = [
+      "arn:aws:iot:*:735140960268:topic/github/*",
+      "arn:aws:iot:*:735140960268:topic/gitlab/*",
+    ]
+  }
+}
+
 resource "aws_iam_role" "iam_for_lambda" {
   name                = "pipeline-dashboard-api"
   assume_role_policy  = data.aws_iam_policy_document.assume_role.json
   managed_policy_arns = ["arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"]
+  inline_policy {
+    name   = "iot_publish"
+    policy = data.aws_iam_policy_document.iot_publish.json
+  }
 }
 
 data "archive_file" "lambda" {

@@ -4,7 +4,8 @@
 		"dockerfile": "aws_serverless.dockerfile"
 	},
 	"mounts": [
-		"source=/Users/severs/.terraform.d/evers.tfrc.json,target=/root/.terraform.d/credentials.tfrc.json,type=bind,consistency=cached"
+		"source=/Users/severs/.terraform.d/evers.tfrc.json,target=/root/.terraform.d/credentials.tfrc.json,type=bind,consistency=cached",
+		"source=/Users/severs/.aws,target=/root/.aws,type=bind,consistency=cached"
 	],
 	"postStartCommand": "fish",
 	"customizations": {

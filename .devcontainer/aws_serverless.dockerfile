@@ -10,6 +10,7 @@ RUN export TF_WORKSPACE=pipeline-dashboard-backend-dev
 
 ## NodeJS Setup
 RUN apk add npm
+RUN npm i -g nodemon
 EXPOSE 3000
 
 ## Git setup

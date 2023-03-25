@@ -4,11 +4,10 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "test": "nodemon test/index.js"
   },
   "dependencies": {
+    "@aws-sdk/client-iot-data-plane": "^3.299.0",
     "aws-serverless-express": "^3.4.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2"
